@@ -14,5 +14,5 @@ export async function Deletar(id){
     `delete from tb_animes
     where id_anime = ?`
     const [resp]=await con.query(comando,[id]);
-    return anime.affectedRows;
+    return resp.affectedRows;
 }

@@ -18,10 +18,10 @@ server.post('/anime' , async (req,resp) =>{
 
 server.delete('/anime' , async (req,resp)=>{
     try {
-        const id = req.body;
+        const id = req.body.id;
 
         const x=Deletar(id);
-        resp.status(206).send();
+        resp.status(204).send();
     } catch (err) {
         resp.status(406).send({
             erro:err.message
