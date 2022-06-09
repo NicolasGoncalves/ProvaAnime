@@ -5,3 +5,6 @@ insert into tb_animes(nm_anime)
 --Remover Anime por id       
 delete from tb_animes 
 	where id_anime = ?;
+
+--Consultar Animes
+Select nm_anime from tb_animes;

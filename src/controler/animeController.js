@@ -1,7 +1,20 @@
-import {Inserir , Deletar} from '../repository/animeRepository.js'
+import {Inserir , Deletar , Consultar} from '../repository/animeRepository.js'
 import {Router} from 'express'
 
 const server =Router();
+
+server.get('/anime', async (req, resp) => {
+    try {
+        const x = await Consultar();
+        resp.send(x);
+
+    } 
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 server.post('/anime' , async (req,resp) =>{
     try {
@@ -28,5 +41,6 @@ server.delete('/anime' , async (req,resp)=>{
         });
     }
 })
+
 
 export default server;

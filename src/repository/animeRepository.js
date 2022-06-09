@@ -16,3 +16,13 @@ export async function Deletar(id){
     const [resp]=await con.query(comando,[id]);
     return resp.affectedRows;
 }
+
+export async function Consultar(){
+    const comando=
+    `Select 
+    nm_anime  nome, 
+    id_anime  id
+    from tb_animes; `
+    const [resp]=await con.query(comando);
+    return resp;
+}
